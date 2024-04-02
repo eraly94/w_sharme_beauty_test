@@ -20,18 +20,19 @@ var theme = ThemeData(
       fontWeight: FontWeight.w700,
     ),
     titleMedium: TextStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.w500,
+      fontSize: 18,
+      fontWeight: FontWeight.w700,
     ),
     titleSmall: TextStyle(
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: FontWeight.w500,
     ),
   ),
   colorScheme: ColorScheme.fromSeed(
     seedColor: const Color(0xffF3F3F3),
-    primary: Color.fromARGB(255, 160, 64, 156),
+    primary: const Color(0xffBA75FE),
     onPrimary: const Color(0xffF3F3F3),
-    secondary: const Color(0xffF3F3F3),
+    secondary: Colors.grey,
+    background: Colors.white,
   ),
 );
