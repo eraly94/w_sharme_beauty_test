@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:w_sharme_beauty_test/config/theme/theme.dart';
 import 'package:w_sharme_beauty_test/features/auth/presentation/widgets/text_form_input_widget.dart';
 import 'package:auto_route/auto_route.dart';
+import 'package:w_sharme_beauty_test/features/main/presentation/pages/pages.dart';
 import 'passwort_reset_page.dart';
 import 'sign_up_page.dart';
 
@@ -70,7 +71,12 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
+                },
                 child: const Text("Войти",
                     style: TextStyle(
                       color: Colors.white,

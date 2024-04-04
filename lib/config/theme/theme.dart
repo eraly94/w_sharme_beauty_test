@@ -5,7 +5,7 @@ var theme = ThemeData(
   textTheme: const TextTheme(
     bodySmall: TextStyle(
       fontSize: 12,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w700,
     ),
     bodyMedium: TextStyle(
       fontSize: 14,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:w_sharme_beauty_test/features/main/presentation/pages/pages.dart';
+import 'package:w_sharme_beauty_test/features/main/presentation/pages/home/home.dart';
 import 'package:w_sharme_beauty_test/features/main/presentation/widgets/widgets.dart';
-
-import 'comment/comment_example.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,7 +35,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialPageRoute(
                         builder: (context) => const NotificationScreen()));
               },
-              child: Image.asset('assets/main/png/notification.png')),
+              child: Image.asset('assets/main/png/noticfication.png')),
           const SizedBox(width: 10),
           GestureDetector(
               onTap: () {
@@ -65,7 +63,16 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(10.0),
                       child: Column(
                         children: [
-                          ListStileWidget(theme: theme),
+                          ListStileWidget(
+                            onTap: () {},
+                            leading: const CircleAvatar(child: Text("A")),
+                            theme: theme,
+                            title: 'Elena Ivanovna',
+                            subtitle: '22-март в 15:00',
+                            trailing: CustomButtonWidget(
+                              theme: theme,
+                            ),
+                          ),
                           const SizedBox(height: 10),
                           index % 2 == 0
                               ? const Text(
@@ -76,15 +83,15 @@ class _HomePageState extends State<HomePage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Text(
-                                      'Мастер Маникюр',
+                                      'Нет ничего более удивительного',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500),
                                     ),
                                     const SizedBox(
                                       height: 5,
                                     ),
-                                    Image.network(
-                                        'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTJfcGhvdG9fb2ZfeW91bmdfaW5kaWFuX2dpcmxfaG9sZGluZ19zdHVkZW50X2JhY19hNDdmMzk1OS0zZDAyLTRiZWEtYTEzOS1lYzI0ZjdhNjEwZGEucG5n.png'),
+                                    Image.asset(
+                                        'assets/main/png/main_picture.png'),
                                   ],
                                 ),
                           const SizedBox(height: 10),
@@ -130,13 +137,7 @@ class _HomePageState extends State<HomePage> {
                                 width: 10,
                               ),
                               ContainerWidget(
-                                onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const TestMe(),
-                                      ));
-                                },
+                                onTap: () {},
                                 text: '6',
                                 widget: Image.asset(
                                   'assets/main/png/share.png',

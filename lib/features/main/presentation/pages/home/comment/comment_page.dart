@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:w_sharme_beauty_test/features/auth/presentation/widgets/text_form_input_widget.dart';
 import 'package:w_sharme_beauty_test/features/main/presentation/widgets/widgets.dart';
 
@@ -11,6 +10,25 @@ class CommentPage extends StatefulWidget {
 }
 
 class _CommentPageState extends State<CommentPage> {
+  // final List<Comments> _comments = [
+  //   Comments(
+  //     username: 'Elena',
+  //     text:
+  //         'Вы супер! Хочу записаться. Можете сказать, сколько стоит этот маникюр?',
+  //     replies: [],
+  //   ),
+  //   Comments(
+  //     username: 'Nastya',
+  //     text: 'Спасибо, 5000 рублей',
+  //     replies: [],
+  //   ),
+  //   Comments(
+  //     username: 'Nastii',
+  //     text:
+  //         'Все супер! Хочу записаться. Можете сказать, сколько стоит этот маникюр?',
+  //     replies: [],
+  //   ),
+  // ];
   bool _currentIndex = false;
   @override
   Widget build(BuildContext context) {
@@ -44,7 +62,22 @@ class _CommentPageState extends State<CommentPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ListStileWidget(theme: theme),
+                      ListStileWidget(
+                        onTap: () {},
+                        leading: const CircleAvatar(
+                            radius: 25,
+                            child: Text(
+                              "A",
+                            )),
+                        theme: theme,
+                        title: 'Elena Ivanovna',
+                        subtitle: '22-март в 15:00',
+                        // ignore: prefer_const_constructors
+                        trailing: Row(
+                          children: const [],
+                        ),
+                        //trailing: CustomButtonWidget(theme: theme),
+                      ),
                       const SizedBox(height: 10),
                       const Text(
                         'Нет ничего более удивительного',
@@ -53,8 +86,9 @@ class _CommentPageState extends State<CommentPage> {
                       const SizedBox(
                         height: 5,
                       ),
-                      Image.network(
-                          'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTJfcGhvdG9fb2ZfeW91bmdfaW5kaWFuX2dpcmxfaG9sZGluZ19zdHVkZW50X2JhY19hNDdmMzk1OS0zZDAyLTRiZWEtYTEzOS1lYzI0ZjdhNjEwZGEucG5n.png'),
+                      Image.asset("assets/main/png/main_picture.png"),
+                      //Image.network(
+                      // 'https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAxL3Jhd3BpeGVsb2ZmaWNlMTJfcGhvdG9fb2ZfeW91bmdfaW5kaWFuX2dpcmxfaG9sZGluZ19zdHVkZW50X2JhY19hNDdmMzk1OS0zZDAyLTRiZWEtYTEzOS1lYzI0ZjdhNjEwZGEucG5n.png'),
                       const SizedBox(height: 10),
                       Row(
                         children: [
@@ -76,7 +110,7 @@ class _CommentPageState extends State<CommentPage> {
                           ContainerWidget(
                             text: '5',
                             widget: Image.asset(
-                              'assets/png/share.png',
+                              'assets/main/png/share.png',
                             ),
                           ),
                         ],

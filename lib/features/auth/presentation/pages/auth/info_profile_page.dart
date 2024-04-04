@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:w_sharme_beauty_test/config/theme/theme.dart';
 import 'package:w_sharme_beauty_test/features/auth/presentation/widgets/text_form_input_widget.dart';
+import 'package:w_sharme_beauty_test/features/main/presentation/pages/pages.dart';
 
 class InfoProfilePage extends StatefulWidget {
   const InfoProfilePage({super.key});
@@ -54,7 +55,12 @@ class _InfoProfilePageState extends State<InfoProfilePage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
+                },
                 child: const Text("Сохранить",
                     style: TextStyle(
                       color: Colors.white,

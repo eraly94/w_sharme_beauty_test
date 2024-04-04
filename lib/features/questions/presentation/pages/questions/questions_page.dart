@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/svg.dart';
 
 import 'package:w_sharme_beauty_test/config/config.dart';
 import 'package:w_sharme_beauty_test/config/theme/theme.dart';
+import 'package:w_sharme_beauty_test/features/questions/presentation/pages/questions/add_question.dart';
 
 import '../../../data/models/stories_model.dart';
 import '../../widgets/questions_widget.dart';
+import '../my_questions.dart';
 
 class QuestionsPage extends StatefulWidget {
   const QuestionsPage({super.key});
@@ -16,7 +16,35 @@ class QuestionsPage extends StatefulWidget {
 }
 
 class _QuestionsPageState extends State<QuestionsPage> {
-  final List<StoriesModel> storiesModel = [];
+  List<StoriesModel> storiesModel = [];
+  @override
+  void initState() {
+    super.initState();
+    storiesModel = [
+      StoriesModel(
+          image: ('assets/questions/manikur.png'),
+          title: 'Маникюр',
+          onTap: () {}),
+      StoriesModel(
+          image: ('assets/questions/pedikur.png'),
+          title: 'Педикюр',
+          onTap: () {}),
+      StoriesModel(
+        image: ('assets/questions/brovi.png'),
+        title: 'Брови',
+        onTap: () {},
+      ),
+      StoriesModel(
+          image: ('assets/questions/resnitsy.png'),
+          title: 'Ресницы',
+          onTap: () {}),
+      StoriesModel(
+          image: ('assets/questions/strishka.png'),
+          title: 'Стрижка',
+          onTap: () {}),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,17 +88,30 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     QuestionsWidget(
                       wrapText: 'Мои вопросы',
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyQuestions()));
+                      },
                     ),
                     QuestionsWidget(
                       wrapText: 'Мои ответы',
+                      onTap: () {},
                     ),
                     QuestionsWidget(
                       wrapText: 'Задать вопрос',
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddQuestion()));
+                      },
                     ),
                   ],
                 ),
@@ -106,7 +147,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                           Text(
                             story.title.toString(),
                             style: theme.textTheme.bodyMedium?.copyWith(
-                              color: theme.colorScheme.secondary,
+                              color: Colors.black,
                             ),
                           ),
                         ],
@@ -117,6 +158,92 @@ class _QuestionsPageState extends State<QuestionsPage> {
                       width: 10,
                     ),
                   ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  children: [
+                    ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: const CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/questions/Irina.png"),
+                      ),
+                      title: const Text(
+                        'Irina',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Посоветуйте каким гель-лаком пользоваться?',
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'сегодня в 15:53',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "ответов 1   ответить",
+                          style: TextStyle(color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  children: [
+                    ListTile(
+                      contentPadding: const EdgeInsets.all(0),
+                      leading: const CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/questions/anonim.png"),
+                      ),
+                      title: const Text(
+                        'Irina',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
+                      subtitle: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Посоветуйте каким гель-лаком пользоваться?',
+                            style: theme.textTheme.bodySmall,
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          'сегодня в 15:53',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "ответов 1   ответить",
+                          style: TextStyle(color: Colors.black87),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ],
             ),

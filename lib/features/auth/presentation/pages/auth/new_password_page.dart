@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:w_sharme_beauty_test/config/theme/theme.dart';
 import 'package:w_sharme_beauty_test/features/auth/presentation/widgets/text_form_input_widget.dart';
 
+import 'authorization_page.dart';
+
 class NewPasswordPage extends StatefulWidget {
   const NewPasswordPage({super.key});
 
@@ -50,7 +52,12 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AuthorizationPage()));
+                },
                 child: const Text("Готово",
                     style: TextStyle(
                       color: Colors.white,
